@@ -1,0 +1,446 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  box-sizing: border-box;
+}
+
+/* Start Grid System */
+@media (min-width: 576px) {
+  /* Small Devices => Landscape Phones */
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  /* Medium Devices => Landscape Tablets */
+  .container {
+    max-width: 720px;
+  }
+
+  .active {
+    padding-bottom: 7px !important;
+    border-bottom: 2px solid black !important;
+  }
+
+  .active-page:hover {
+    border-bottom: none;
+    animation: none;
+  }
+
+  .lili {
+    position: relative !important;
+    overflow: hidden !important;
+  }
+  .lili::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: auto;
+    right: 0;
+    width: 0;
+    height: 2px; /* Adjust the height of the border */
+    background-color: black !important; /* Use current text color */
+    transition: width 0.5s ease-out !important;
+  }
+
+  .lili:hover::after {
+    width: 100% !important;
+    left: 0 !important;
+    right: auto !important;
+    animation: border-bottom-right-to-left 0.5s !important;
+  }
+}
+@media (min-width: 992px) {
+  /* Desktops */
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  /* Large Screens */
+  .container {
+    max-width: 1140px;
+  }
+}
+
+.scrollable-div::-webkit-scrollbar {
+  width: 10px;
+}
+.scrollable-div::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+.scrollable-div::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+.scrollable-div::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.scrollable-div {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
+}
+
+/*Loading*/
+
+.loader {
+  width: 45px;
+  aspect-ratio: 0.75;
+  --c: no-repeat linear-gradient(theme(colors.stone.800) 0 0);
+  background:
+    var(--c) 0% 50%,
+    var(--c) 50% 50%,
+    var(--c) 100% 50%;
+  background-size: 20% 50%;
+  animation: loading 1s infinite linear;
+}
+
+@keyframes loading {
+  20% {
+    background-position:
+      0% 0%,
+      50% 50%,
+      100% 50%;
+  }
+  40% {
+    background-position:
+      0% 100%,
+      50% 0%,
+      100% 50%;
+  }
+  60% {
+    background-position:
+      0% 50%,
+      50% 100%,
+      100% 0%;
+  }
+  80% {
+    background-position:
+      0% 50%,
+      50% 50%,
+      100% 100%;
+  }
+}
+
+@keyframes border-bottom-right-to-left {
+  from {
+    width: 0;
+    left: auto;
+  }
+  to {
+    width: 100%;
+    left: 0;
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(-78%);
+  }
+
+  to {
+    transform: translateX(-1800px);
+  }
+}
+
+@keyframes loginPage {
+  from {
+    width: 0;
+    display: none;
+  }
+  to {
+    width: 400px;
+    display: block;
+  }
+}
+@keyframes noLoginPage {
+  from {
+    width: 400px;
+    display: block;
+  }
+  to {
+    width: 0px;
+    display: none;
+  }
+}
+
+/* Nav Bar Section */
+
+.active {
+  padding-bottom: 7px !important;
+  border-bottom: 2px solid black !important;
+}
+
+.active-page:hover {
+  border-bottom: none;
+  animation: none;
+}
+
+.lili {
+  position: relative !important;
+  overflow: hidden !important;
+}
+.lili::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: auto;
+  right: 0;
+  width: 0;
+  height: 2px; /* Adjust the height of the border */
+  background-color: black !important; /* Use current text color */
+  transition: width 0.5s ease-out !important;
+}
+
+.lili:hover::after {
+  width: 100% !important;
+  left: 0 !important;
+  right: auto !important;
+  animation: border-bottom-right-to-left 0.5s !important;
+}
+
+/* Nav Bar Section */
+
+/* bg section */
+
+.bg-container {
+  position: relative;
+  background-image: url("../public/imgs/bg-1.png");
+
+  overflow: hidden;
+  background-position-y: 55%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-container::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.82);
+}
+
+.bg-content {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* bg section */
+
+/* Our Products */
+
+.our-products {
+  overflow: hidden;
+  position: relative;
+  background: rgb(48, 48, 217);
+  background: radial-gradient(
+    circle,
+    rgba(48, 48, 217, 1) 0%,
+    rgba(13, 13, 71, 1) 0%,
+    rgba(10, 10, 10, 1) 100%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.our-products::after {
+  position: absolute;
+  z-index: 3;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.animated-title {
+  box-sizing: border-box;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  -webkit-text-stroke-width: 1px;
+  stroke-width: 1px;
+  -webkit-text-stroke-color: #fff;
+  stroke: #fff;
+  white-space-collapse: collapse;
+  text-wrap: nowrap;
+  transition: all 0.5s ease-out;
+  animation: scroll 10s infinite linear;
+}
+
+.animated-title li:hover {
+  -webkit-text-fill-color: rgb(255, 255, 255);
+  -webkit-text-stroke-color: black;
+  stroke: black;
+  cursor: pointer;
+}
+/* Our Products */
+
+/*our locations*/
+
+.animated-title-black {
+  font-size: 54px;
+  box-sizing: border-box;
+  -webkit-text-fill-color: rgb(255, 255, 255);
+  -webkit-text-stroke-width: 1px;
+  stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  stroke: black;
+  white-space-collapse: collapse;
+  text-wrap: nowrap;
+  transition: all 0.5s ease-out;
+  animation: scroll 10s infinite linear;
+}
+
+.animated-title-black li:hover {
+  -webkit-text-fill-color: rgb(255, 255, 255);
+  -webkit-text-stroke-color: black;
+  stroke: black;
+  cursor: pointer;
+}
+
+/*our locations*/
+
+/*Contact us*/
+
+.contact-read {
+  position: relative;
+  overflow: hidden;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+.contact-read::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: auto;
+  right: 0;
+  width: 0;
+  height: 2px; /* Adjust the height of the border */
+  background-color: #3452ff; /* Use current text color */
+  transition: width 0.5s ease-out;
+}
+
+.contact-read:hover::after {
+  width: 100%;
+  left: 0;
+  right: auto;
+  animation: border-bottom-right-to-left 0.5s;
+}
+
+/*Contact us*/
+
+/* Mobiles Header */
+.bgm-container {
+  position: relative;
+  background-image: url("../public/imgs/bg-products.jpg");
+
+  overflow: hidden;
+  background-position-y: 55%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bgm-container::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+/* Mobiles Header */
+
+.bg-about-container {
+  position: relative;
+  background-image: url("../public/imgs/bg-about.jpg");
+  overflow: hidden;
+  background-position-y: 55%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-about-container::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/*Cart */
+
+@keyframes cartHover {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 390px;
+  }
+}
+
+.cart .cart-overview {
+  width: 0;
+  max-height: 590px;
+  display: none;
+}
+.cart:hover .cart-overview {
+  display: block;
+  width: 390px;
+  animation: cartHover 0.3s ease-out;
+}
+
+/*Check out*/
+
+.checkout-form input {
+  padding: 12px 9px;
+  border: 1px solid #b8b8b8da;
+  border-radius: 10px;
+
+  width: 80%;
+}
+
+#log-in {
+  display: none;
+  width: 0;
+  animation: noLoginPage 0.2s ease-in-out;
+}
+
+#log-in.login {
+  display: block !important;
+  width: 400px;
+  animation: loginPage 0.2s ease-in-out;
+}
+
+.bg-visiable {
+  display: block;
+}
+
+#nav-toggle {
+  display: none;
+  width: 0;
+  animation: noLoginPage 0.2s ease-in-out;
+}
+
+#nav-toggle.nav-tog {
+  display: block !important;
+  width: 400px;
+  animation: loginPage 0.2s ease-in-out;
+}
