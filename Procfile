@@ -1,1 +1,1 @@
-web: gunicorn app:app && serve -s build -l $PORT
+web: serve -s dist -l $PORT

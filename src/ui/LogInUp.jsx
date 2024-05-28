@@ -12,9 +12,9 @@ function LogInUp() {
             </div>
             <div id="log-in" className=" overflow-y-auto scrollable-div fixed top-0 right-0 bg-white h-screen z-50 shadow-2xl" ref={logInRef}>
                 <p className="mt-5 rounded-full border border-black w-fit p-1 mx-6 cursor-pointer hover:bg-black hover:text-white" onClick={handleLogin}><IoClose /></p>
-                <div className=" font-light flex justify-center items-center gap-16 text-2xl text-[#919191]      border-b border-[#c5c5c5c2] w-[80%]  mx-auto" >
-                    <span className={` ${sign === "sign-in" && `border-b border-[#3452ff] text-[#222]`} p-4  w-full text-center cursor-pointer`} onClick={handleSignIn} >Log In</span>
-                    <span className={` ${sign === "sign-up" && `border-b border-[#3452ff] text-[#222]`} p-4 w-full cursor-pointer`} onClick={handleSignUp}>Sign Up</span>
+                <div className=" font-light flex justify-center items-center gap-16 text-2xl text-[#919191]      border-b border-[#c5c5c5c2] w-[70%]  mx-auto " >
+                    <span className={` ${sign === "sign-in" && `border-b border-[#3452ff] text-[#222]`} p-4  w-full text-center cursor-pointer text-nowrap`} onClick={handleSignIn} >Log In</span>
+                    <span className={` ${sign === "sign-up" && `border-b border-[#3452ff] text-[#222]`} p-4 w-full cursor-pointer text-nowrap`} onClick={handleSignUp}>Sign Up</span>
                 </div>
 
                 {sign === "sign-in" ? <form className="text-sm flex flex-col gap-3 p-10">
