@@ -28,9 +28,9 @@ function MainContextProvider({ children }) {
         async function fetchMobiles() {
             try {
                 const endpoints = [
-                    'http://localhost:3001/mobiles',
-                    'http://localhost:3001/laptops',
-                    'http://localhost:3001/electronics'
+                    '/mobiles',
+                    '/laptops',
+                    '/electronics'
                 ];
 
                 const [smartphones, laptops, tablets] = await Promise.all(

@@ -9,7 +9,7 @@ function ElectronicsContextProvider({ children }) {
     useEffect(function () {
         async function fetchLaptops() {
             try {
-                const res = await fetch("http://localhost:3001/electronics")
+                const res = await fetch("/electronics")
                 const data = await res.json();
                 data && data.map(obj => Object.assign(obj, { quantity: 1 }))
                 setElectronicss(data);

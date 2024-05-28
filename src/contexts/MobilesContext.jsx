@@ -9,7 +9,7 @@ function MobilesContextProvider({ children }) {
     useEffect(function () {
         async function fetchMobiles() {
             try {
-                const res = await fetch("http://localhost:3001/mobiles")
+                const res = await fetch("/mobiles")
                 const data = await res.json();
                 data && data.map(obj => Object.assign(obj, { quantity: 1 }))
                 setMobiles(data);

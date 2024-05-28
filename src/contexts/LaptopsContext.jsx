@@ -11,7 +11,7 @@ function LaptopsContextProvider({ children }) {
     useEffect(function () {
         async function fetchLaptops() {
             try {
-                const res = await fetch("http://localhost:3001/laptops")
+                const res = await fetch("/laptops")
                 const data = await res.json();
                 data && data.map(obj => Object.assign(obj, { quantity: 1 }))
                 setLaptops(data);
