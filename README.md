@@ -14,7 +14,10 @@ W-Electronics-Store is an E-Commerce web application built using React. This pro
 - Responsive Design
 - Ratings and Reviews
 
+## Demo
+You can check Live Preview from here:
 
+https://e-commerce-electronics-038a93420c3c.herokuapp.com/
 
 ## Project Dependencies
 
